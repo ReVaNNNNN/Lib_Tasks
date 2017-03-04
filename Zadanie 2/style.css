@@ -1,0 +1,14 @@
+body {
+    background-color: cornflowerblue;
+}
+
+div {
+    text-align: center;
+    color: floralwhite;
+    /*color: rebeccapurple;*/
+}
+
+p {
+    font-size: 36px;
+    color: floralwhite;
+}
