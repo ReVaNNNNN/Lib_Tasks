@@ -18,7 +18,7 @@ function getData() {
 
             // show user name and surname
             echo '<p> Witaj '. $name .' '. $surname. '</p>';
-
+            readFromCSV();
         // if name or surname is empty show message
         } else {
 
@@ -28,7 +28,7 @@ function getData() {
 
 }
 // save data to csv file - remember to change permission to file if occur error - permission denied
-function saveToCSV($name, $surname){
+function saveToCSV($name, $surname) {
 
     // open or create (if doesn't exist) file to add new data
     $fp = fopen('list.csv', 'a');
@@ -41,6 +41,23 @@ function saveToCSV($name, $surname){
 
     // good practice - close file
     fclose($fp);
+}
+
+function readFromCSV() {
+
+    $handle = fopen('list.csv', 'r');
+
+  while(($data = fgetcsv($handle, "," )) !== false) {
+
+      $num = count($data);
+
+      for ($i=0; $i<$num; $i+=2) {
+
+          echo $data[$i]. ' '. $data[$i+1]. '<br>';
+      }
+  }
+
+    fclose($handle);
 }
 
 
