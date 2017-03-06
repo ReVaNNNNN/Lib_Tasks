@@ -18,6 +18,7 @@ function getData() {
 
             // show user name and surname
             echo '<p> Witaj '. $name .' '. $surname. '</p>';
+            // show all data in csv file
             readFromCSV();
         // if name or surname is empty show message
         } else {
@@ -45,18 +46,21 @@ function saveToCSV($name, $surname) {
 
 function readFromCSV() {
 
+    // create handle to file with data
     $handle = fopen('list.csv', 'r');
 
+    // until won't reach end file
   while(($data = fgetcsv($handle, "," )) !== false) {
 
       $num = count($data);
 
+      // show data name and username in one line
       for ($i=0; $i<$num; $i+=2) {
 
           echo $data[$i]. ' '. $data[$i+1]. '<br>';
       }
   }
-
+    // good practice - close file
     fclose($handle);
 }
 
