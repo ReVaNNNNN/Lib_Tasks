@@ -1,4 +1,12 @@
 // function execute after click on button
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    showName();
+
+});
+
+
 function showName() {
 
     // creare new XMLHttpRequest
@@ -22,5 +30,4 @@ function showName() {
     xhttp.open("GET", "plik.php?name=" + name + "&surname=" + surname, true);
     xhttp.send();
 }
-
 
