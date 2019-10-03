@@ -54,7 +54,7 @@ class Car extends Motor implements Movement, Dashboard
 
     public function go()
     {
-        $this->speed = 30;
+        $this->speed = 50;
     }
 
   
@@ -63,13 +63,11 @@ class Car extends Motor implements Movement, Dashboard
         $this->speed = 0;
     }
 
-    // from Movement interface
     public function accelerate($velocity)
     {
         $this->speed += $velocity;
     }
 
-    // from Movement interface
     public function slowdown($velocity)
     {
         $this->speed -= $velocity;
