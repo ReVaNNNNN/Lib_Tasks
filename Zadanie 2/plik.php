@@ -29,25 +29,15 @@ function saveToCSV($name, $surname) {
 }
 
 function readFromCSV() {
-
-    // create handle to file with data
     $handle = fopen('list.csv', 'r');
-
-    // until won't reach end file
-  while(($data = fgetcsv($handle, "," )) !== false) {
-
-      $num = count($data);
-
-      // show data name and username in one line
-      for ($i=0; $i<$num; $i+=2) {
-
+    
+     while(($data = fgetcsv($handle, "," )) !== false) {
+        $num = count($data);
+        for ($i=0; $i<$num; $i+=2) {
           echo $data[$i]. ' '. $data[$i+1]. '<br>';
-      }
-  }
-    // good practice - close file
+        }
+    }
     fclose($handle);
 }
 
-
-// call main function
 getData();
