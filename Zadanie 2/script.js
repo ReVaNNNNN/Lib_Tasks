@@ -1,9 +1,5 @@
-// function execute after click on button
-
 document.addEventListener("DOMContentLoaded", function () {
-
     showName();
-
 });
 
 
