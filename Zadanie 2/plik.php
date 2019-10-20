@@ -7,16 +7,13 @@ function getData() {
             $surname = $_GET['surname'];
 
             saveToCSV($name, $surname);
-
             echo '<p> Witaj '. $name .' '. $surname. '</p>';
-
             readFromCSV();
 
         } else {
             echo 'Podaj imię i nazwisko';
         }
     }
-
 }
 
 function saveToCSV($name, $surname) {
